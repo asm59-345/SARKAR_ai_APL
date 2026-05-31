@@ -25,7 +25,10 @@ else:
 
 if use_sqlite:
     # Safe fallback database for local hackathon runs if Postgres is not spun up yet
-    sqlite_url = "sqlite:///./sarkarai_mock.db"
+    import os
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    sqlite_path = os.path.join(base_dir, "sarkarai_mock.db")
+    sqlite_url = f"sqlite:///{sqlite_path}"
     engine = create_engine(sqlite_url, connect_args={"check_same_thread": False})
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
