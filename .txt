@@ -1,0 +1,16 @@
+Terminal 1 — Python FastAPI Backend (Port 8000)
+Open your first terminal and run:
+powershell
+
+cd d:\Hackathon\2026\APL\final\backend
+pip install -r requirements.txt
+python app/main.py
+
+
+Terminal 2 — Next.js Frontend (Port 3000)
+Open your second terminal and run:
+powershell
+
+cd d:\Hackathon\2026\APL\final
+npm install 
+npm run dev
